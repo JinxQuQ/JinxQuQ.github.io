@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>李卉 - 高级测试工程师 / 测试组长</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #5d6978;
+      --soft: #f5f7fa;
+      --line: #dce3ea;
+      --accent: #0f766e;
+      --accent-soft: #e7f4f2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #e9eef4;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.48;
+      letter-spacing: 0;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .toolbar button {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #ffffff;
+      color: var(--ink);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+      padding: 7px 12px;
+    }
+
+    .toolbar button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .resume {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 16px auto;
+      padding: 12mm 12mm 13mm;
+      background: #ffffff;
+      box-shadow: 0 18px 45px rgba(35, 44, 58, 0.16);
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .name {
+      margin: 0;
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .headline {
+      margin-top: 6px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 10px;
+      margin-top: 9px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .intent {
+      align-self: end;
+      min-width: 195px;
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .intent strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 11.5px;
+    }
+
+    .section {
+      margin-top: 14px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .section-title::before {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 17px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 14px;
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft);
+    }
+
+    .skill {
+      position: relative;
+      padding-left: 12px;
+      color: #263241;
+    }
+
+    .skill::before {
+      content: "";
+      position: absolute;
+      top: 0.67em;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .skill strong {
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .item {
+      margin-top: 9px;
+    }
+
+    .item-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: baseline;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .item-name {
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .item-role {
+      margin-left: 8px;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .item-date {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .summary,
+    .project-desc {
+      margin: 5px 0 0;
+      color: #344256;
+    }
+
+    .label {
+      margin-top: 5px;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    ul.clean {
+      margin: 4px 0 0;
+      padding-left: 17px;
+    }
+
+    ul.clean li {
+      margin: 2px 0;
+      padding-left: 1px;
+    }
+
+    .edu-line {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft);
+      font-weight: 800;
+    }
+
+    .edu-line span:last-child {
+      color: var(--muted);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    @page {
+      size: A4;
+      margin: 8mm 9mm;
+    }
+
+    @media print {
+      html,
+      body {
+        background: #ffffff;
+      }
+
+      body {
+        font-size: 8.75pt;
+        line-height: 1.3;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .toolbar {
+        display: none;
+      }
+
+      .resume {
+        width: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .header {
+        padding-bottom: 7px;
+      }
+
+      .name {
+        font-size: 22.5pt;
+      }
+
+      .headline {
+        font-size: 10.8pt;
+      }
+
+      .section {
+        margin-top: 7px;
+      }
+
+      .section-title {
+        margin-bottom: 4px;
+        font-size: 11.4pt;
+      }
+
+      .skill-grid {
+        gap: 2px 10px;
+        padding: 6px 8px;
+      }
+
+      .item {
+        margin-top: 5px;
+      }
+
+      .item-head {
+        padding-bottom: 3px;
+      }
+
+      .item-name {
+        font-size: 9.7pt;
+      }
+
+      .summary,
+      .project-desc {
+        margin-top: 3px;
+      }
+
+      .label {
+        margin-top: 3px;
+      }
+
+      ul.clean {
+        margin-top: 2px;
+      }
+
+      ul.clean li {
+        margin: 0;
+      }
+
+      .item,
+      .edu-line {
+        break-inside: avoid;
+      }
+
+      .projects {
+        break-before: page;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" aria-hidden="true">
+    <button class="primary" type="button" onclick="window.print()">打印 / 导出 PDF</button>
+  </div>
+
+  <main class="resume">
+    <header class="header">
+      <div>
+        <h1 class="name">李卉</h1>
+        <div class="headline">高级测试工程师 / 测试组长</div>
+        <div class="meta">
+          <span>26岁</span>
+          <span>湖北武汉</span>
+          <span>6年经验</span>
+          <span>13247128361</span>
+          <span>821669288@qq.com</span>
+        </div>
+      </div>
+      <div class="intent">
+        <strong>求职意向</strong>
+        高级测试工程师 / 测试组长<br>
+        湖北武汉 · 薪资面议<br>
+        在职找工作 · 1个月内到岗
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">核心能力</h2>
+      <div class="skill-grid">
+        <div class="skill"><strong>复杂业务平台：</strong>熟悉业财、费控、审批、数据链路、权限边界和多系统协作场景，能拆解复杂业务规则并转化为测试策略与验收标准。</div>
+        <div class="skill"><strong>测试管理：</strong>具备测试组长经验，能统筹测试计划、质量风险、缺陷推进、版本验收、跨团队协作和质量复盘。</div>
+        <div class="skill"><strong>测试方法：</strong>熟悉软件测试全流程，能独立完成需求分析、测试方案、用例设计、测试执行、缺陷分析和测试报告。</div>
+        <div class="skill"><strong>自动化与质量效能：</strong>熟悉接口自动化、UI 自动化、性能测试、持续集成和测试平台化建设，具备从 0 到 1 搭建框架经验。</div>
+        <div class="skill"><strong>技术工具：</strong>熟练使用 Python、Requests、Pytest、YAML、Playwright、JMeter、Postman、Fiddler、Apifox 等工具。</div>
+        <div class="skill"><strong>工程与环境：</strong>熟悉 Jenkins、GitLab、Allure、Docker、Linux、Nginx 等持续集成和环境部署工具。</div>
+        <div class="skill"><strong>数据与监控：</strong>熟悉 MySQL、Redis、Oracle、SQL Server、达梦及常用 SQL 操作，熟悉 Grafana、InfluxDB、Telegraf 等性能监控工具。</div>
+        <div class="skill"><strong>AI Agent：</strong>熟悉 AI Agent 的业务落地、知识沉淀、流程治理和跨团队协作管理，能将业务经验沉淀为可复用工作机制。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">工作经历</h2>
+      <article class="item">
+        <div class="item-head">
+          <div class="item-name">微派网络 <span class="item-role">效率工程（ERP）测试组长</span></div>
+          <div class="item-date">2024.2 - 至今</div>
+        </div>
+        <p class="summary">负责复杂业务平台与质量效能建设，覆盖 UGP 增长平台、财务/费控流程、SRM、海外业务及 AI Agent 工作体系。作为测试组长，统筹测试计划、质量风险、缺陷推进和版本验收，参与业务流程抽象、数据口径梳理、权限边界校验和跨团队协作治理。</p>
+        <div class="label">主要工作与成果：</div>
+        <ul class="clean">
+          <li>深度参与业财与效率平台建设，围绕业务流、审批流、结算/核算口径、数据链路和权限边界拆解需求，制定测试策略和验收标准。</li>
+          <li>统筹多团队协作下的测试计划、资源安排、质量风险识别和缺陷闭环，推动关键版本稳定交付。</li>
+          <li>建设多 Agent 协作体系，拆分业务域工作空间，明确职责边界、知识沉淀方式和调度机制，提升复杂问题处理效率。</li>
+          <li>推动 AI Agent 在广告投放、归因分析、ROAS、成本诊断、质量保障、财务流程等场景落地，支撑数据分析、问题排查、文档生成和流程辅助。</li>
+          <li>沉淀业务知识库、排查手册、案例库和标准输出规范，将业务规则、数据口径、审批链路和异常处理机制转化为可复用能力。</li>
+          <li>参与云服务器、OpenClaw、OXAgent、Feishu Bot Bridge 等基础设施巡检、日志分析和问题定位，沉淀可复用运维经验。</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-name">上海泛微网络 <span class="item-role">测试工程师</span></div>
+          <div class="item-date">2020.7 - 2023.11</div>
+        </div>
+        <p class="summary">负责 E-Office 协同办公系统核心模块质量保障，覆盖流程管理、登录/门户、新闻、产品、文档及集成插件等模块，累计参与 42 次版本迭代，承担功能测试、接口测试、性能测试、接口自动化、测试方案设计和测试报告输出。</p>
+        <div class="label">主要工作与成果：</div>
+        <ul class="clean">
+          <li>负责核心业务模块的需求分析、测试计划、测试方案、用例设计、测试执行、缺陷跟踪和版本验收，保障多版本稳定交付。</li>
+          <li>主导接口自动化体系从 0 到 1 建设，基于 Python + Requests + Pytest + YAML + Redis + MySQL 搭建自动化框架，覆盖核心业务流程。</li>
+          <li>基于 Docker + JMeter + Jenkins + GitLab + Allure 建设持续集成测试链路，实现自动化报告持续输出，核心业务场景自动化覆盖率约 95%，回归成本降低约 30%。</li>
+          <li>独立建设性能测试与监控体系，使用 InfluxDB + Grafana + Telegraf + JMeter 完成高并发、尖峰压力、负载测试和稳定性验证。</li>
+          <li>完成 3 倍线上峰值流量压测，推动性能瓶颈优化和内存泄漏修复；优化问题接口 16 个，拦截严重性能风险 2 个。</li>
+          <li>参与多平台兼容性、安全校验和接口文档规范化建设，推动 ShowDoc 落地，降低接口测试和自动化维护成本。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section projects">
+      <h2 class="section-title">项目经历</h2>
+      <article class="item">
+        <div class="item-head">
+          <div class="item-name">AI 质量协同平台 ee quality <span class="item-role">项目负责人</span></div>
+          <div class="item-date">当前项目</div>
+        </div>
+        <p class="project-desc"><strong>项目描述：</strong>面向研发、测试团队的 AI 质量协同平台，覆盖需求评审、用例生成、缺陷分析、自动化测试接入和质量知识沉淀等场景，推动测试流程从人工经验驱动升级为 AI 辅助与平台化协同。</p>
+        <div class="label">职责与成果：</div>
+        <ul class="clean">
+          <li>主导建设 AI 质量协同平台，将 Agent 能力应用于需求理解、用例生成、风险识别、缺陷分析和测试总结等测试核心流程。</li>
+          <li>设计质量知识库机制，沉淀历史需求、缺陷案例、测试经验和业务规则，提升 AI 辅助测试的准确性与复用能力。</li>
+          <li>推动自动化测试接入平台，打通测试执行、结果反馈、问题跟踪链路，降低重复验证和人工整理成本。</li>
+          <li>制定测试 Agent 输出规范、权限边界和结果校验机制，保障 AI 能力在真实测试流程中可控、可追溯、可规模化使用。</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-name">微派费控管理系统 <span class="item-role">测试负责人</span></div>
+          <div class="item-date">2025.6 - 至今</div>
+        </div>
+        <p class="project-desc"><strong>项目描述：</strong>建设智能费控与支付平台，覆盖费用申请、审批、付款、记账及轻量预算管控，连接流程引擎、主数据、财务中台、费用提单和资金付款平台，支撑采购需求、供应商、合同、支付、记账等全流程管理。</p>
+        <div class="label">职责与成果：</div>
+        <ul class="clean">
+          <li>负责全流程测试策略制定与质量把控，主导新流程、新模块的测试方案设计和版本验收。</li>
+          <li>围绕填单、审批、链路追踪、主数据同步、权限边界等关键链路设计专项用例，建立数据链路验证机制，保障多系统数据一致性。</li>
+          <li>落地 Playwright UI 自动化，采用三层 Page Object 模式（BasePage -&gt; EntityPage -&gt; 具体页面），通过数据驱动批量生成测试用例。</li>
+          <li>设计配置化测试框架，通过 ENTITIES 配置中心统一管理 28 个模块元数据；单文件自动生成 188 个测试，代码量减少约 60%，新增模块测试成本降低约 98%。</li>
+          <li>采用 storageState 登录态持久化、token 自动检测与刷新机制，集成 Allure + Playwright 报告、历史归档和飞书通知，支持 dev/beta/prod 多环境运行。</li>
+          <li>接入 Model Context Protocol，探索 AI 辅助测试用例生成与维护，提升测试开发和用例维护效率。</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-name">微派财务中台系统 <span class="item-role">测试工程师</span></div>
+          <div class="item-date">2024.12 - 至今</div>
+        </div>
+        <p class="project-desc"><strong>项目描述：</strong>面向复杂业务经营和财务管理场景，建设业财一体化平台能力，连接业务流程、财务流程、审批机制、数据口径和跨部门协作，解决规则复杂、口径不统一、流程链路长和异常处理成本高等问题。</p>
+        <div class="label">职责与成果：</div>
+        <ul class="clean">
+          <li>梳理业务模式、财务规则、审批链路、结算/核算口径和数据流转关系，将复杂业务规则抽象为系统流程和平台能力。</li>
+          <li>拆解业务方、财务方、产品、研发、测试、运维等多角色协作边界，明确需求来源、处理流程、异常分支和责任归属。</li>
+          <li>参与需求分析、流程设计、功能验收、数据校验和问题复盘，保障系统兼顾业务灵活性、财务准确性和流程合规性。</li>
+          <li>沉淀标准操作文档、排查路径、数据口径说明和复盘机制，推动业务数据、财务数据、审批数据链路打通与口径统一。</li>
+          <li>推动业财流程从人工沟通、经验驱动走向平台化、标准化、可追踪管理，提升管理层对业务状态、成本结构和执行进度的判断效率。</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-name">多业务 AI Agent 协作体系建设 <span class="item-role">体系建设与推进</span></div>
+          <div class="item-date">2026.1 - 至今</div>
+        </div>
+        <p class="project-desc"><strong>项目描述：</strong>面向多个业务团队和管理场景，建设可分工、可调度、可沉淀的 AI Agent 协作体系，将广告投放、归因分析、财务流程、质量保障、SRM、海外业务等复杂场景沉淀为可复用的 Agent 能力。</p>
+        <div class="label">职责与成果：</div>
+        <ul class="clean">
+          <li>规划不同业务 Agent 的职责边界、知识来源、文件结构、权限规则和协作方式，避免职责重叠和上下文污染。</li>
+          <li>建立跨 Agent 调度规范，减少重复执行、重复输出和信息割裂，提升复杂问题处理效率。</li>
+          <li>沉淀业务知识、排查案例、常用工具规则和标准输出模板，使 Agent 能持续服务业务和团队协作。</li>
+          <li>推动 Agent 与飞书文档、Wiki、Bitable、消息系统等协作工具结合，支持报告生成、问题记录和经验复盘。</li>
+          <li>按问题复杂度调度不同 Agent，形成多业务 Agent 分工体系，提升问题排查、数据分析、文档沉淀和管理协作效率。</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-name">E-Office 企业级 OA 办公系统 <span class="item-role">测试工程师</span></div>
+          <div class="item-date">2020.7 - 2024.10</div>
+        </div>
+        <p class="project-desc"><strong>项目描述：</strong>基于 B/S 架构的企业协同办公平台，支持 Web 端、移动端及第三方平台集成。系统以流程引擎为核心驱动数据流转，覆盖合同、费控、项目、客户等 12 大模块，服务企业全场景协同办公需求。</p>
+        <div class="label">职责与成果：</div>
+        <ul class="clean">
+          <li>负责流程引擎、登录门户、新闻、产品、文档及集成插件等核心模块质量保障，参与 42 个迭代版本全流程测试。</li>
+          <li>参与安全与权限校验，发现并协助修复 SQL 注入、XSS 跨站脚本、数据权限越权等问题，执行弱网环境稳定性测试。</li>
+          <li>完成多平台兼容性测试，覆盖 Windows、Linux、中标麒麟，MySQL、SQL Server、Oracle、达梦及多浏览器终端。</li>
+          <li>主导接口自动化测试从 0 到 1 建设，搭建 Python + Requests + Pytest + YAML + Redis + MySQL 自动化框架，覆盖约 95% 核心业务场景，回归测试成本降低约 30%。</li>
+          <li>构建 Docker + JMeter + Jenkins + GitLab + Allure 持续集成链路，实现 Jenkins 自动触发和测试报告自动生成。</li>
+          <li>搭建 InfluxDB + Grafana + Telegraf + JMeter 监控体系，完成尖峰压力、负载测试、稳定性验证和 3 倍线上峰值流量全链路压测。</li>
+          <li>优化 16 个性能瓶颈接口，拦截 2 个严重缺陷，推动研发修复性能问题和内存泄漏。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">教育背景</h2>
+      <div class="edu-line">
+        <span>武汉轻工大学 · 软件工程</span>
+        <span>2016.9 - 2020.6</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
