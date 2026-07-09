@@ -1,0 +1,15 @@
+Huiwen Mincho cover webfont subset
+
+This site uses a WOFF2 subset generated from Huiwen Mincho Regular for the
+cover title only. The subset contains the glyphs used in:
+
+关于生命、宇宙、世间万物的终极答案是42
+
+Original font name: 汇文明朝体 / Huiwen Mincho
+Original author shown by source pages: 特里王
+Reference pages:
+- https://www.100font.com/thread-396.htm
+- https://font.sucai999.com/font/335.html
+
+The original font file was not committed. Only the small cover-title subset is
+stored here to keep the web page lightweight.

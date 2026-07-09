@@ -26,12 +26,20 @@
       --blue: #0d3f8f;
     }
 
+    @font-face {
+      font-family: "Huiwen Mincho Cover";
+      src: url("assets/fonts/HuiwenMincho-cover.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     html {
-      background: #dfeee6;
+      background: #edf1ec;
       scroll-behavior: smooth;
     }
 
@@ -198,27 +206,30 @@
 
     .cover-quote-main {
       position: relative;
-      font-size: 34px;
-      font-weight: 950;
-      line-height: 1.5;
-      letter-spacing: 0.04em;
-      color: rgba(15, 46, 35, 0.64);
-      -webkit-text-stroke: 0.18px rgba(15, 46, 35, 0.32);
+      font-family: "Huiwen Mincho Cover", var(--font-serif);
+      font-size: 43px;
+      font-weight: 400;
+      line-height: 1.42;
+      letter-spacing: 0.012em;
+      color: rgba(13, 36, 28, 0.74);
+      -webkit-text-stroke: 0;
       text-shadow:
-        0.35px 0 rgba(15, 46, 35, 0.24),
-        -0.3px 0 rgba(255, 255, 255, 0.22),
+        0.5px 0 rgba(13, 36, 28, 0.12),
+        -0.35px 0 rgba(255, 255, 255, 0.16),
         0 1px 0 rgba(255, 255, 255, 0.28),
-        0 0 18px rgba(255, 255, 255, 0.34);
-      filter: contrast(1.04);
+        0 0 14px rgba(255, 255, 255, 0.28);
+      filter: contrast(1.08);
     }
 
     .cover-quote-sub {
-      margin-top: 7px;
-      color: rgba(19, 73, 57, 0.42);
-      font-family: var(--font-typewriter);
+      margin-top: 10px;
+      color: rgba(25, 62, 48, 0.45);
+      font-family: "Palatino", "Georgia", "Times New Roman", serif;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 500;
+      font-style: italic;
       line-height: 1.55;
+      letter-spacing: 0.035em;
     }
 
     .cover.is-opening .cover-quote {
@@ -267,8 +278,8 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      opacity: 0.54;
-      filter: hue-rotate(12deg) saturate(0.94) contrast(1.02) brightness(1.02);
+      opacity: 0.28;
+      filter: hue-rotate(8deg) saturate(0.56) contrast(0.92) brightness(1.04);
       mix-blend-mode: normal;
       pointer-events: none;
       user-select: none;
@@ -549,7 +560,11 @@
     }
 
     .section {
-      margin-top: 24px;
+      margin-top: 34px;
+    }
+
+    .item + .item {
+      margin-top: 26px;
     }
 
     .section-title {
@@ -998,7 +1013,7 @@
     </button>
     <div class="cover-quote">
       <span class="cover-quote-main">关于生命、宇宙、世间万物的终极答案是42</span>
-      <span class="cover-quote-sub">"the Answer to Life, the Universe and Everything is"</span>
+      <span class="cover-quote-sub">the Answer to Life, the Universe and Everything is</span>
     </div>
   </section>
   <img class="ambient-bg" src="assets/materials/resume-dream-bg-070x.gif" alt="" aria-hidden="true">
@@ -1021,7 +1036,7 @@
           <h1 class="name">李卉</h1>
           <div class="headline">高级测试工程师 / 测试组长</div>
           <div class="meta">
-            <span>26岁</span>
+            <span>27岁</span>
             <span>湖北武汉</span>
             <span>6年经验</span>
             <span>13247128361</span>
@@ -1071,7 +1086,7 @@
 
         <article class="item">
           <div class="item-head">
-            <div class="item-name">上海泛微网络 <span class="item-role">测试工程师</span></div>
+            <div class="item-name"><a class="paper-action" href="https://www.weaver.com.cn" target="_blank" rel="noopener noreferrer">上海泛微网络</a> <span class="item-role">测试工程师</span></div>
             <div class="item-date">2020.7 - 2023.11</div>
           </div>
           <p class="summary">负责 E-Office 协同办公系统核心模块质量保障，覆盖流程管理、登录/门户、新闻、产品、文档及集成插件等模块，累计参与 42 次版本迭代，承担功能测试、接口测试、性能测试、接口自动化、测试方案设计和测试报告输出。</p>
